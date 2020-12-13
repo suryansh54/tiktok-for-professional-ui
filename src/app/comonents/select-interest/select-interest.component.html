@@ -1,0 +1,67 @@
+<div class="move-me-back-wrapper">
+  <div class="main-container">
+
+    <div class="top-header-sec">
+      <div class="author-image">
+        <img src="../assets/author.png" alt="Author">
+      </div>
+
+      <div class="header-container">
+        <i class="fa fa-times-circle close-btn" aria-hidden="true"></i>
+        <div class="title-sec">
+          <h2>You on Movemeback</h2>
+          <p>Your Profile</p>
+        </div>
+      </div>
+
+      <div class="step-counter">
+        <ul>
+          <li class="active"><span>1</span><i class="fa fa-check" aria-hidden="true"></i></li>
+          <li class="active"><span>2</span><i class="fa fa-check" aria-hidden="true"></i></li>
+          <li class=""><span>3</span><i class="fa fa-check" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="interest-sec-wrapper" [class.fade]="selected?.length === minSelection" *ngIf="!isInterestSubmit">
+      <div class="container">
+        <h3 class="title">Your interests?</h3>
+        <div class="item-list-wrap row">
+          <div class="col-sm-6 col-md-4 col-xl-3" *ngFor="let card of interestInformation">
+            <div class="interest-item">
+              <div class="main-cat" [ngClass]="{active: card.active}" (click)="getSelected(card)">
+                <div class="image-item">
+                  <img src="{{card.image}}" alt="{{card.title}}">
+                </div>
+                <div class="captions">
+                  <span>{{card.title}}</span>
+                </div>
+              </div>
+              <div class="sub-cat">
+                <h4>{{card.title}}<i class="fas fa-caret-right"></i> Sub Categories</h4>
+                <ul>
+                  <li *ngFor="let subCard of card.subCategories; let i = index" class="sub-item"  >
+                    <input type="checkbox" [checked]="subCard.active" name="sub-{{i}}" (click)="selectSubCategory(subCard, card.title)">
+                    <label (click)="selectSubCategory(subCard, card.title)">{{subCard.title }}</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer-sec" *ngIf="!isInterestSubmit">
+      <div class="container">
+        <button type="submit" (click)="createUserInfo()" [class.active]="remainsSelection === 0">
+          <span [style.width.%]="buttonWidth" class="button-width"></span>
+          <span class="button-text">{{ remainsSelection === 0 ? 'Continue' : (selected.length == 0 ? 'Select
+            '+minSelection+' topics' : 'Follow '+remainsSelection+' more' )}} </span>
+        </button>
+      </div>
+    </div>
+    <div class="interest-submitted" *ngIf="isInterestSubmit">
+      <h1>Intersest Submitted</h1>
+    </div>
+  </div>
+</div>

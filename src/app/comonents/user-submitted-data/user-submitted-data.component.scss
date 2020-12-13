@@ -1,0 +1,46 @@
+.header-container-wrapper {
+  background: #113d5a;
+  text-align: center;
+  padding: 10px;
+  h3 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 1.2;
+    padding: 10px;
+    font-weight: 100;
+  }
+  p {
+    color: #c6c6c6;
+    margin: 0 0 10px;
+  }
+}
+.body-container-wrapper {
+  margin: 20px 10px;
+  .mat-table {
+    width: 80%;
+    margin: 40px auto;
+  }
+  a {
+    text-decoration: none;
+    background: #d8e3e9;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #2196f3;
+  }
+  mat-card {
+    margin-bottom: 20px;
+    h2 {
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+    b {
+      font-weight: 400;
+      width: 100px;
+      display: inline-block;
+      color: #939393;
+    }
+    .card-body > div {
+      margin-bottom: 5px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<div class="header-container-wrapper">
+  <h3>Movemeback admin panel</h3>
+  <p>This is the demo admin panel (not for production)</p>
+</div>
+<div class="body-container-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <mat-card>
+          <h2>Location</h2>
+          <div class="content">
+            <div class="card-body">
+              <div class="longitude">
+                <b>Longitude</b>
+                <span>{{this.longitude}}</span>
+              </div>
+              <div class="latitude">
+                <b>Latitude</b>
+                <span>{{latitude}}</span>
+              </div>
+            </div>
+            <div class="map">
+
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-6">
+        <mat-card>
+          <h2>Browser</h2>
+          <div class="content">
+            <div class="card-body">
+              <div class="browser">
+                <b>Browser</b>
+                <span>{{browser}}</span>
+              </div>
+              <div class="device">
+                <b>Version</b>
+                <span>{{version}}</span>
+              </div>
+            </div>
+            <div class="map">
+
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-card>
+          <h2>User interest data</h2>
+          <div class="interst" *ngFor="let element of userInterst">
+            {{element.general}}
+            <ol >
+              <li  *ngFor="let el of element.specific"> {{el}}</li>
+            </ol>
+          </div>
+          
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-container-wrapper">
+
+</div>
